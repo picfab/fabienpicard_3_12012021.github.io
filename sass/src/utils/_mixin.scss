@@ -1,0 +1,9 @@
+@mixin shadow($color:#000,$x:1,$y:1,$blur:5,$dist:0,$inset:null){
+    -moz-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
+    -webkit-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
+    -o-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
+    box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
+}
+@mixin transition-timing($delay){
+    animation-delay: $delay * 200ms;
+}

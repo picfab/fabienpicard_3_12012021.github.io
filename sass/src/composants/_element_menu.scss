@@ -1,0 +1,99 @@
+
+
+$nbElement : 10;
+.menu{
+    &__elt{
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        @include shadow();
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        box-sizing: border-box;
+        font-weight: bold;
+        margin-bottom: 20px;
+        animation-timing-function:ease;
+        animation-name: elt-memu;
+        animation-duration: 1500ms;
+        animation-fill-mode: both;
+        @for $i from 0 through $nbElement {
+            &.elt-#{$i} {
+                @include transition-timing($i);
+            }
+        }
+    }
+
+    &__btn{
+        border: none;
+        background: $third;
+        width: 100px;
+        margin-right: -100px;
+        position: relative;
+        transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -o-transition: all 1s ease;
+
+    }
+    &__icon{
+        color: #fff;
+        font-size: 3em;
+    }
+
+    &__elt:hover &{
+        &__btn{
+           margin-right: 0;
+        }
+        &__icon{
+            animation: turn-picto 1s ease;
+            -webkit-animation: turn-picto 1s ease;
+        }
+    }
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    &__title{
+        width: 100%;
+        margin-top: 0;
+        font-size: 1.2em;
+    }
+    &__description{
+        flex: 2;
+        margin: 0;
+    }
+}
+
+
+@keyframes elt-memu{
+    0% {
+        opacity: 0;
+        transform: translate(0, 20px);
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+}
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes turn-picto{
+    0% {
+
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+
