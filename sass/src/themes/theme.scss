@@ -1,3 +1,45 @@
+@font-face {
+    font-family: "Roboto";
+    src:   url("/webfonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src:   url("/webfonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Shrikhand";
+    src:   url("/webfonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+body{
+    font-family: 'Roboto';
+}
+h1{
+    font-family: "Shrikhand";
+}
+p,li{
+    font-weight: normal;
+}
 .fas{
     margin: 0 10px;
+}
+a,button{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+li{
+    line-height: 2em;
+}
+
+hr{
+    width: 60px;
+    margin-left: 0;
+    border: 2px solid $third;
+    margin-bottom: 20px;
 }

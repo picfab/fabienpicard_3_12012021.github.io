@@ -1,0 +1,39 @@
+.head,.homeHead{
+    display: flex;
+    flex-direction: column;
+    background: $bgLight;
+}
+.head{
+    @include shadow();
+    z-index: 1;
+    position: relative;
+    padding: 10px;
+    &__branding{
+        display: flex;
+        justify-content: center;
+    }
+}
+.homeHead{
+    &__local{
+        background: $bgMiddle;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    &__content{
+        background: $bgLight;
+        padding: $boxPadding;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title{
+        text-align: center;
+        font-family: "Roboto";
+    }
+    &__text{
+        text-align: center;
+        margin-top: $espaceElement;
+        margin-bottom: $espaceElement;
+    }
+}

@@ -1,0 +1,17 @@
+.btn{
+    color:#fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    @include btn-hover(50px);
+    &::before{
+        background: $first;/*Oldbrowsers*/
+        background: -moz-linear-gradient(bottom, $first 0%, $second 100%);/*FF3.6-15*/
+        background: -webkit-linear-gradient(bottom, $first 0%,$second 100%);/*Chrome10-25,Safari5.1-6*/
+        background: linear-gradient(to top, $first 0%,$second 100%);/*W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+*/
+    }
+}

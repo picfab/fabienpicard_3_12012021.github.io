@@ -1,24 +1,53 @@
-
-
 $nbElement : 10;
+$cardPadding:20px;
+$cardContentPadding:10px;
+$widthPrice:50px;
+$btnWidth:100px;
+@mixin transition-price(){
+    transition: all .6s ease;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -ms-transition: all .6s ease;
+    -o-transition: all .6s ease;
+}
+@mixin border-rad-menu(){
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
 .menu{
-    &__elt{
+    background: $bgMiddle;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    &__subTitle{
+        text-transform: uppercase;
         width: 100%;
-        overflow: hidden;
-        display: flex;
-        @include shadow();
+        color: $textLight;
+        font-weight: normal;
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+    &_command{
+        margin:auto;
+        min-width: 175px;
+    }
+
+    &__elt{
+        background: #fff;
+        cursor: pointer;
+        width: 100%;
         border-radius: 15px;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        -ms-border-radius: 15px;
-        -o-border-radius: 15px;
         box-sizing: border-box;
         font-weight: bold;
         margin-bottom: 20px;
         animation-timing-function:ease;
         animation-name: elt-memu;
-        animation-duration: 1500ms;
+        animation-duration: 1000ms;
         animation-fill-mode: both;
+        @include border-rad-menu();
+        @include btn-hover(15px);
         @for $i from 0 through $nbElement {
             &.elt-#{$i} {
                 @include transition-timing($i);
@@ -26,48 +55,73 @@ $nbElement : 10;
         }
     }
 
-    &__btn{
-        border: none;
-        background: $third;
-        width: 100px;
-        margin-right: -100px;
-        position: relative;
-        transition: all 1s ease;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        -ms-transition: all 1s ease;
-        -o-transition: all 1s ease;
-
-    }
-    &__icon{
-        color: #fff;
-        font-size: 3em;
-    }
-
-    &__elt:hover &{
-        &__btn{
-           margin-right: 0;
-        }
-        &__icon{
-            animation: turn-picto 1s ease;
-            -webkit-animation: turn-picto 1s ease;
-        }
-    }
-    &__content{
-        width: 100%;
+    &__card{
+        overflow: hidden;
         display: flex;
-        flex-wrap: wrap;
-        padding: 10px;
+        padding:$cardPadding;
+        @include border-rad-menu();
+    }
+
+    &__content{
+        width: calc(100% - #{$widthPrice} + #{$cardContentPadding} * 2);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: $cardContentPadding $cardContentPadding $cardContentPadding 0;
+        @include transition-price();
     }
     &__title{
         width: 100%;
         margin-top: 0;
         font-size: 1.2em;
+        margin-bottom: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     &__description{
-        flex: 2;
+        color:$textLight;
+        margin: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    &__prix{
+        width: $widthPrice;
+        padding: $cardContentPadding;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    &__btn{
+        border: none;
+        background: $third;
+        width: $btnWidth;
+        padding: 20px;
+        margin: -$cardPadding -1#{$cardPadding} -$cardPadding 20px;
+        position: relative;
+        @include transition-price();
+    }
+    &__icon{
+        color: #fff;
+        font-size: 3em;
         margin: 0;
     }
+
+    &__elt:hover &{
+        &__content{
+            width: calc(100% - #{$btnWidth} - #{$cardContentPadding} * 2 - #{$widthPrice});
+        }
+        &__btn{
+           margin-right: -$cardPadding;
+        }
+        &__icon{
+            animation: turn-picto .6s ease;
+            -webkit-animation: turn-picto .6s ease;
+        }
+    }
+
 }
 
 
@@ -85,9 +139,13 @@ $nbElement : 10;
     }
 }
 @keyframes turn-picto{
-    0% {
-
-    }
+    25% {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+}
     100% {
         transform: rotate(360deg);
         -webkit-transform: rotate(360deg);

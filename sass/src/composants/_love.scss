@@ -1,0 +1,95 @@
+.love {
+    border: none;
+    background: none;
+    position: relative;
+    cursor: pointer;
+    &__icon{
+        &::before,&::after{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            -webkit-text-fill-color: transparent;
+        }
+        &::before{
+            opacity: 0;
+            background: $first;/*Oldbrowsers*/
+            background: -moz-linear-gradient(top, $first 0%, $second 100%);/*FF3.6-15*/
+            background: -webkit-linear-gradient(top, $first 0%,$second 100%);/*Chrome10-25,Safari5.1-6*/
+            background: linear-gradient(to bottom, $first 0%,$second 100%);/*W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+*/
+            -webkit-background-clip: text;
+            transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            -o-transition: all .5s ease;
+        }
+        &::after{
+            opacity: 1;
+            -webkit-text-stroke: 1px black;
+            background: none;
+            -webkit-background-clip: text;
+            z-index: 1;
+            content: "\f004";
+            transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            -o-transition: all .5s ease;
+
+        }
+        &:hover::before{
+            opacity: 1;
+        }
+        &:hover::after{
+            opacity: 0;
+        }
+    }
+
+
+}
+
+
+// .love{
+//     border: none;
+//     position: relative;
+//     z-index: 1;
+//     // -webkit-background-clip: text;
+//     // -webkit-text-fill-color: transparent;
+//     cursor: pointer;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     background: $first;/*Oldbrowsers*/
+//     background: -moz-linear-gradient(top, $first 0%, $second 100%);/*FF3.6-15*/
+//     background: -webkit-linear-gradient(top, $first 0%,$second 100%);/*Chrome10-25,Safari5.1-6*/
+//     background: linear-gradient(to bottom, $first 0%,$second 100%);/*W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+*/
+//     &__icon{
+
+//     }
+    // &::after{
+    //     content: '';
+    //     opacity: .5;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     transition: all .5s ease;
+    //     -webkit-transition: all .5s ease;
+    //     -moz-transition: all .5s ease;
+    //     -ms-transition: all .5s ease;
+    //     -o-transition: all .5s ease;
+    //     background: $first;/*Oldbrowsers*/
+    //     background: -moz-linear-gradient(top, $first 0%, $second 100%);/*FF3.6-15*/
+    //     background: -webkit-linear-gradient(top, $first 0%,$second 100%);/*Chrome10-25,Safari5.1-6*/
+    //     background: linear-gradient(to bottom, $first 0%,$second 100%);/*W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+*/
+    // }
+    // &:hover::after {
+    //     opacity: 1;
+    // }
+// }
+

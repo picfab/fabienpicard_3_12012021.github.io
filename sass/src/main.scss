@@ -1,7 +1,26 @@
 @import './vendors/reset';
-@import './themes/theme';
-@import './utils/mixin';
+
 @import './utils/variables';
+@import './utils/mixin';
+
+@import './themes/theme';
+
+
+@import './layout/header';
+@import './layout/footer';
+
+@import './pages/restaurant';
+
+@import './composants/loader';
 @import './composants/element_menu';
-@import './composants/header';
-@import './vendors/fontAwsome-all'
+@import './composants/love';
+@import './composants/btn';
+@import './composants/info';
+@import './composants/listRestau';
+
+@import './vendors/fontAwsome-all';
+
+
+@import './utils/loader_temporaire';
+
+
