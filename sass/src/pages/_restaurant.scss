@@ -9,8 +9,13 @@
     }
 }
 .restau{
+    &__ouvBox {
+        max-height: calc(100vw * 9 / 16);
+        overflow: hidden;
+    }
     &__ouv {
         width: 100%;
+        height: 100%;
         z-index: 1;
     }
     &__headContent {
@@ -18,13 +23,39 @@
         box-sizing: border-box;
         background: $bgMiddle;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
         margin: auto;
         padding:50px 20px 0;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-        margin-top: -30px;
+        margin-top: -80px;
         position: relative;
         z-index: 1;
+    }
+    &__headBtn{
+        font-size: 1.5em;
+    }
+}
+
+.menu{
+    &__content{
+        box-sizing: border-box;
+        background: $bgMiddle;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__subTitle{
+        text-transform: uppercase;
+        width: 100%;
+        color: $textLight;
+        font-weight: normal;
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+    &_command{
+        margin:30px auto 80px;
+        min-width: 175px;
     }
 }

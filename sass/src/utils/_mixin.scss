@@ -11,11 +11,12 @@
 
 
 
-@mixin btn-hover($radius:0){
+@mixin btn-hover($radius:0,$bg:true){
     position: relative;
     z-index: 1;
     cursor: pointer;
     &::after{
+        @include shadow();
         content: '';
         opacity: .5;
         border-radius: $radius;
@@ -23,7 +24,6 @@
         -moz-border-radius: $radius;
         -ms-border-radius: $radius;
         -o-border-radius: $radius;
-        @include shadow();
         position: absolute;
         top: 0;
         right: 0;
@@ -38,27 +38,30 @@
     &:hover::after {
         opacity: 1;
     }
-    &::before{
-        content: '';
-        opacity: 1;
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: $radius;
-        -webkit-border-radius: $radius;
-        -moz-border-radius: $radius;
-        -ms-border-radius: $radius;
-        -o-border-radius: $radius;
-        transition: all .5s ease;
-        -webkit-transition: all .5s ease;
-        -moz-transition: all .5s ease;
-        -ms-transition: all .5s ease;
-        -o-transition: all .5s ease;
+    @if $bg{
+        &::before{
+            content: '';
+            opacity: 1;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: $radius;
+            -webkit-border-radius: $radius;
+            -moz-border-radius: $radius;
+            -ms-border-radius: $radius;
+            -o-border-radius: $radius;
+            transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            -o-transition: all .5s ease;
+        }
+        &:hover::before {
+            opacity: .9;
+        }
     }
-    &:hover::before {
-        opacity: .9;
-    }
+
 }

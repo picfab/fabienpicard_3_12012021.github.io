@@ -1,8 +1,8 @@
 $nbElement : 10;
-$cardPadding:20px;
+$cardPadding:10px;
 $cardContentPadding:10px;
 $widthPrice:50px;
-$btnWidth:100px;
+$btnWidth:80px;
 @mixin transition-price(){
     transition: all .6s ease;
     -webkit-transition: all .6s ease;
@@ -16,48 +16,30 @@ $btnWidth:100px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
 }
-.menu{
-    background: $bgMiddle;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    &__subTitle{
-        text-transform: uppercase;
-        width: 100%;
-        color: $textLight;
-        font-weight: normal;
-        margin-top: 40px;
-        font-size: 1.2em;
-    }
-    &_command{
-        margin:auto;
-        min-width: 175px;
-    }
-
-    &__elt{
-        background: #fff;
-        cursor: pointer;
-        width: 100%;
-        border-radius: 15px;
-        box-sizing: border-box;
-        font-weight: bold;
-        margin-bottom: 20px;
-        animation-timing-function:ease;
-        animation-name: elt-memu;
-        animation-duration: 1000ms;
-        animation-fill-mode: both;
-        @include border-rad-menu();
-        @include btn-hover(15px);
-        @for $i from 0 through $nbElement {
-            &.elt-#{$i} {
-                @include transition-timing($i);
-            }
+.cardMenu{
+    background: #fff;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation-timing-function:ease;
+    animation-name: elt-memu;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    @include border-rad-menu();
+    @include btn-hover(15px);
+    @for $i from 0 through $nbElement {
+        &.card-#{$i} {
+            @include transition-timing($i);
         }
     }
 
-    &__card{
+    &__elt{
         overflow: hidden;
         display: flex;
+        justify-content: space-between;
         padding:$cardPadding;
         @include border-rad-menu();
     }
@@ -65,6 +47,7 @@ $btnWidth:100px;
     &__content{
         width: calc(100% - #{$widthPrice} + #{$cardContentPadding} * 2);
         display: flex;
+        box-sizing: border-box;
         flex-direction: column;
         justify-content: flex-end;
         padding: $cardContentPadding $cardContentPadding $cardContentPadding 0;
@@ -88,6 +71,7 @@ $btnWidth:100px;
     }
     &__prix{
         width: $widthPrice;
+        box-sizing: border-box;
         padding: $cardContentPadding;
         display: flex;
         align-items: flex-end;
@@ -98,8 +82,8 @@ $btnWidth:100px;
         border: none;
         background: $third;
         width: $btnWidth;
-        padding: 20px;
-        margin: -$cardPadding -1#{$cardPadding} -$cardPadding 20px;
+        padding: 20px 10px;
+        margin: -$cardPadding (-$btnWidth - $cardPadding) -#{$cardPadding} 0;
         position: relative;
         @include transition-price();
     }
@@ -109,7 +93,7 @@ $btnWidth:100px;
         margin: 0;
     }
 
-    &__elt:hover &{
+    &:hover &,&:active &{
         &__content{
             width: calc(100% - #{$btnWidth} - #{$cardContentPadding} * 2 - #{$widthPrice});
         }

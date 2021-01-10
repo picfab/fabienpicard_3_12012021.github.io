@@ -1,0 +1,71 @@
+
+@media (min-width:$breakTab){
+    .info{
+        &__title {
+            text-align: center;
+        }
+        &__content {
+            max-width: 400px;
+            margin: auto;
+        }
+    }
+
+    .listRestau{
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__elt {
+            width: 50%;
+            box-sizing: border-box;
+        }
+        &__imgBox {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            height: calc(#{$breakTab} * 9 / 16 / 2);
+        }
+    }
+
+    .listRestau{
+        &__title,&__content{
+            max-width: $breakTab;
+            margin: auto;
+        }
+    }
+
+    .restau{
+        &__ouvBox{
+            max-height: 600px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__ouv{
+            object-fit: cover;
+            height: 100%;
+        }
+        &__headContent{
+            max-width: $breakTab;
+        }
+    }
+    .menu{
+        &__content{
+            max-width: $breakTab;
+            margin: auto;
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .footer__branding {
+            width: 100%;
+            text-align: center;
+        }
+        ul{
+            text-align: center;
+        }
+    }
+}

@@ -5,20 +5,22 @@
 
 @import './themes/theme';
 
-
 @import './layout/header';
 @import './layout/footer';
 
 @import './pages/restaurant';
 
 @import './composants/loader';
-@import './composants/element_menu';
+@import './composants/card_menu';
 @import './composants/love';
 @import './composants/btn';
 @import './composants/info';
 @import './composants/listRestau';
 
 @import './vendors/fontAwsome-all';
+
+@import './themes/theme-tablette.scss';
+
 
 
 @import './utils/loader_temporaire';

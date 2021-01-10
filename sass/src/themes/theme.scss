@@ -17,6 +17,7 @@ body{
 }
 h1{
     font-family: "Shrikhand";
+    font-size: 2em;
 }
 p,li{
     font-weight: normal;
@@ -42,4 +43,9 @@ hr{
     margin-left: 0;
     border: 2px solid $third;
     margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.box{
+    padding: $boxPadding;
 }
