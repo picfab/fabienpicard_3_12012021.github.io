@@ -64,6 +64,9 @@ a {
   text-decoration: none;
   color: inherit; }
 
+a, button {
+  overflow: hidden; }
+
 li {
   line-height: 2em; }
 
@@ -76,6 +79,10 @@ hr {
 
 .box {
   padding: 50px 20px; }
+
+:focus {
+  outline: none;
+  border: 1px solid #9356DC; }
 
 .head, .homeHead {
   display: flex;
@@ -220,14 +227,14 @@ hr {
     border-left-color: #FF79DA;
     border-radius: 50%;
     content: ''; }
-  .loader:before, .loader:after {
+  .loader:before {
     content: '';
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center; }
   .loader:before {
-    background-image: url(/images/logo/ohmyfood@2x.svg);
+    background-image: url(../images/logo/ohmyfood@2x.svg);
     height: 100%;
     width: 80%;
     margin: auto; }
