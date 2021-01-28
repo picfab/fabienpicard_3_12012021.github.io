@@ -21,7 +21,6 @@
 	0% {
         opacity: 1;
 	}
-
 	70% {
         opacity: 1;
         transform: scale(1);
@@ -35,8 +34,6 @@
 $width: 200px;
 
 .loader {
-
-
   width: $width;
   height: $width;
   position: fixed;
@@ -63,8 +60,7 @@ $width: 200px;
     content: '';
   }
 
-  &:before,
-  &:after {
+  &:before{
     content: '';
     display: block;
     background-size: contain;
@@ -77,48 +73,8 @@ $width: 200px;
     height: 100%;
     width: 80%;
     margin: auto;
-    // animation-duration: 2s;
-    // animation-fill-mode: both;
-    // animation-iteration-count: infinite;
-    // animation-name: loader-pot;
   }
-
 }
-
-// @keyframes loader-pot {
-// 	from, 45%, 55%, 65%, 75%, 80%, 85%, to {
-// 		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-// 	}
-
-// 	0% {
-// 		transform: rotate(0);
-// 	}
-
-// 	45% {
-// 		transform: translate3d(-4%, -13%, 0) rotate(-13deg);
-// 	}
-
-// 	55% {
-// 		transform: translate3d(1%, -2%, 0) rotate(6deg);
-// 	}
-
-// 	65% {
-// 		transform: translate3d(-2%, -4%, 0) rotate(-3deg);
-// 	}
-
-// 	75% {
-// 		transform: translate3d(2%, 3%, 0) rotate(3deg);
-// 	}
-
-// 	80% {
-// 		transform: translate3d(-2%, 1%, 0) rotate(-2deg);
-// 	}
-
-// 	to {
-// 		transform: none;
-// 	}
-// }
-
 
 @keyframes loader-spin {
   0% { transform: rotate(0deg); }

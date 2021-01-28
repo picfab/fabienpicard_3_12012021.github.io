@@ -18,6 +18,7 @@
         &__elt {
             width: 50%;
             box-sizing: border-box;
+            padding: 0 10px;
         }
         &__imgBox {
             display: block;
@@ -30,20 +31,22 @@
     .listRestau{
         &__title,&__content{
             max-width: $breakTab;
-            margin: auto;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 
     .restau{
         &__ouvBox{
-            max-height: 600px;
+            height: 400px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         &__ouv{
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
             height: 100%;
         }
         &__headContent{
