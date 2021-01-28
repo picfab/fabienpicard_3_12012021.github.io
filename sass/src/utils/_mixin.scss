@@ -1,11 +1,10 @@
-@mixin shadow($color:#000,$x:1,$y:1,$blur:5,$dist:0,$inset:null){
-    -moz-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
-    -webkit-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
+@mixin shadow($color:rgba(0, 0, 0, 0.171),$x:0,$y:1,$blur:14,$dist:0,$inset:null){
     -o-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
     box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
 }
 @mixin transition-timing($delay){
-    animation-delay: $delay * 300ms;
+    -webkit-animation-delay: $delay * 300ms;
+            animation-delay: $delay * 300ms;
 }
 
 
@@ -16,7 +15,7 @@
     z-index: 1;
     cursor: pointer;
     &::after{
-        @include shadow();
+        @include shadow(rgba(0, 0, 0, 0.65),0, 8, 14, 0);
         content: '';
         opacity: .5;
         border-radius: $radius;
