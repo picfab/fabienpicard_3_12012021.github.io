@@ -10,12 +10,11 @@
 
 
 
-@mixin btn-hover($radius:0,$bg:true){
+@mixin btn-hover($radius:0,$bg:true,$shadowBtn:rgba(0, 0, 0, 0.65)){
     position: relative;
     z-index: 1;
-    cursor: pointer;
     &::after{
-        @include shadow(rgba(0, 0, 0, 0.65),0, 8, 14, 0);
+        @include shadow($shadowBtn,0, 8, 14, 0);
         content: '';
         opacity: .5;
         border-radius: $radius;
@@ -59,7 +58,7 @@
             -o-transition: all .5s ease;
         }
         &:hover::before {
-            opacity: .9;
+            opacity: 0.7;
         }
     }
 

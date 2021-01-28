@@ -33,7 +33,7 @@ $btnWidth:80px;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     @include border-rad-menu();
-    @include btn-hover(15px);
+    @include btn-hover(15px,true,rgba(0, 0, 0, 0.35));
     @for $i from 0 through $nbElement {
         &.card-#{$i} {
             @include transition-timing($i);
