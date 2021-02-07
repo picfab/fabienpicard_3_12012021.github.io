@@ -1,15 +1,23 @@
+/** mixin reutilisable **/
+
+// génère une box shadow
 @mixin shadow($color:rgba(0, 0, 0, 0.171),$x:0,$y:1,$blur:14,$dist:0,$inset:null){
     -o-box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
     box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
 }
+
+// génère le délais d'une animation
+// $delay int
 @mixin transition-timing($delay){
     -webkit-animation-delay: $delay * 300ms;
             animation-delay: $delay * 300ms;
 }
 
-
-
-
+// Génère l'animation au survol des boutons
+// $radius int
+// $bg  => si pas de background mettre false
+//      => si true renseigner le background dans le pseudo element before du composant
+// $shadowBtn => couleur de l'ombre portée
 @mixin btn-hover($radius:0,$bg:true,$shadowBtn:rgba(0, 0, 0, 0.65)){
     position: relative;
     z-index: 1;

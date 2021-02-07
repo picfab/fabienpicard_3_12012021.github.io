@@ -1,3 +1,7 @@
+/** css global du site
+* font
+* balise
+**/
 @font-face {
     font-family: "Roboto";
     src:   url("../webfonts/Roboto/Roboto-Regular.ttf") format("truetype");
@@ -35,7 +39,6 @@ a{
 
 }
 a,button{
-    //empêcher -webkit-tap-highlight-color d'être plus grand lorsqu'il y a des border raisus
     overflow: hidden;
 }
 
