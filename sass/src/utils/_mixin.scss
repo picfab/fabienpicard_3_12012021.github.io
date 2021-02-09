@@ -6,13 +6,6 @@
     box-shadow: $inset #{$x}px #{$y}px #{$blur}px #{$dist}px $color;
 }
 
-// génère le délais d'une animation
-// $delay int
-@mixin transition-timing($delay){
-    -webkit-animation-delay: $delay * 300ms;
-            animation-delay: $delay * 300ms;
-}
-
 // Génère l'animation au survol des boutons
 // $radius int
 // $bg  => si pas de background mettre false

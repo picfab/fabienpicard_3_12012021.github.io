@@ -1,5 +1,5 @@
 /** css pour les cartes des menus **/
-$nbElement : 10; //nombre d'éléments par section du menu
+$nbElement : 4; //nombre d'éléments par section du menu
 $cardPadding:10px; // padding des items des menus
 $widthPrice:50px; // largeur de l'emplacement des tarifs
 $btnWidth:80px; // largeur du bouton qui apparait au survol des items du menu
@@ -39,7 +39,8 @@ $btnWidth:80px; // largeur du bouton qui apparait au survol des items du menu
     @include btn-hover(15px,false,rgba(0, 0, 0, 0.35));
     @for $i from 0 through $nbElement {
         &.card-#{$i} {
-            @include transition-timing($i);
+            -webkit-animation-delay: $i * 300ms;
+            animation-delay: $i * 300ms;
         }
     }
 
