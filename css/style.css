@@ -35,7 +35,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/** les varibles globals du css du site **/
+/** les varaibles globals du css du site **/
 /** mixin reutilisable **/
 /** css global du site
 * font
@@ -175,7 +175,8 @@ hr {
   -o-object-fit: cover;
   object-fit: cover; }
 .restau__title {
-  font-size: 28px; }
+  font-size: 28px;
+  font-weight: normal; }
 .restau__headContent {
   width: 100%;
   box-sizing: border-box;
